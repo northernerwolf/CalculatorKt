@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.calculatorkt.ui.theme.Black_back
 import com.example.calculatorkt.ui.theme.CalculatorKtTheme
 
 class MainActivity : ComponentActivity() {
@@ -27,7 +28,7 @@ class MainActivity : ComponentActivity() {
                 buttonSpacing = buttonSpacing,
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Color.DarkGray)
+                    .background(Black_back)
                     .padding(16.dp))
             }
         }
