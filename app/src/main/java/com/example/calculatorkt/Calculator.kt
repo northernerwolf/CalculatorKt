@@ -1,5 +1,6 @@
 package com.example.calculatorkt
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
@@ -48,9 +49,9 @@ fun Calculator(
                 CalculatorButton(
                     simbol = "AC",
                     modifier = Modifier
-                    .background(Red_Ac)
-                    .aspectRatio(1f)
-                    .weight(1f),
+                        .background(Red_Ac)
+                        .aspectRatio(1f)
+                        .weight(1f),
                 onClick ={
                     onAction(CalculatorAction.Clear)
                 }
@@ -97,6 +98,7 @@ fun Calculator(
                         .weight(1f),
                     onClick ={
                         onAction(CalculatorAction.Number(7))
+
                     }
                 )
                 CalculatorButton(
@@ -259,3 +261,5 @@ fun Calculator(
 
 
 }
+
+

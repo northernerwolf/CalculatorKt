@@ -31,10 +31,9 @@ fun CalculatorButton(
     ){
         Text(
             text = simbol,
-        fontSize = 32.sp,
+            fontSize = 32.sp,
             color = Color.White
         )
-
     }
 
 
