@@ -26,24 +26,24 @@ class MainActivity : ComponentActivity() {
             CalculatorKtTheme {
                 // A surface container using the 'background' color from the theme
 
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    HomeCalculator(calculatorViewModelNew = viewModel)
-
-                }
+//                Surface(
+//                    modifier = Modifier.fillMaxSize(),
+//                    color = MaterialTheme.colors.background
+//                ) {
+//                    HomeCalculator(calculatorViewModelNew = viewModel)
+//
+//                }
 //                val viewModel = viewModel<CalculatorViewModel>()
 //                    val state = viewModel.state
-//                val buttonSpacing = 8.dp
-//                Calculator(
+                val buttonSpacing = 8.dp
+                Calculator(
 //                    state = state,
 //                    onAction = viewModel:: onAction,
-//                buttonSpacing = buttonSpacing,
-//                modifier = Modifier
-//                    .fillMaxSize()
-//                    .background(Black_back)
-//                    .padding(16.dp))
+                buttonSpacing = buttonSpacing,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(Black_back)
+                    .padding(16.dp))
             }
         }
     }

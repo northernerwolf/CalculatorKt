@@ -1,5 +1,6 @@
 package com.example.calculatorkt
 
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -12,6 +13,7 @@ class CalculatorViewModel: ViewModel() {
         private set
 
     fun onAction(action: CalculatorAction){
+        Log.e("HandleChange", action.toString())
         when(action){
             is CalculatorAction.Number -> enterNumber(action.nummber)
             is CalculatorAction.Decimal -> enterDecimal()

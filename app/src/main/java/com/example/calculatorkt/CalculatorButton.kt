@@ -1,5 +1,6 @@
 package com.example.calculatorkt
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -26,7 +27,7 @@ fun CalculatorButton(
         contentAlignment = Alignment.Center,
         modifier = Modifier
             .clip(RoundedCornerShape(30.dp))
-            .clickable { onClick }
+            .clickable { onClick() }
             .then(modifier)
     ){
         Text(

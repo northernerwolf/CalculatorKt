@@ -13,6 +13,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.calculatorkt.ui.theme.Black_in
 import com.example.calculatorkt.ui.theme.Green
 import com.example.calculatorkt.ui.theme.Orange
@@ -20,11 +21,13 @@ import com.example.calculatorkt.ui.theme.Red_Ac
 
 @Composable
 fun Calculator(
-    state: CalculatorState,
+//    state: CalculatorState,
     buttonSpacing: Dp = 8.dp,
     modifier: Modifier = Modifier,
-    onAction: (CalculatorAction) -> Unit
+//    onAction: (CalculatorAction) -> Unit
 ){
+    val viewModel = viewModel<CalculatorViewModel>()
+                    val state = viewModel.state
     Box(modifier = modifier){
         Column(
             modifier = Modifier
@@ -53,7 +56,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                 onClick ={
-                    onAction(CalculatorAction.Clear)
+                   viewModel.onAction(CalculatorAction.Clear)
                 }
                 )
                 CalculatorButton(
@@ -63,7 +66,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Clear)
+                       viewModel.onAction(CalculatorAction.Clear)
                     }
                 )
                 CalculatorButton(
@@ -73,7 +76,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Delet)
+                        viewModel.onAction(CalculatorAction.Delet)
                     }
                 )
                 CalculatorButton(
@@ -83,7 +86,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Operation(CalculatorOperation.Divide))
+                        viewModel.onAction(CalculatorAction.Operation(CalculatorOperation.Divide))
                     }
                 )
             }
@@ -97,7 +100,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Number(7))
+                        viewModel.onAction(CalculatorAction.Number(7))
 
                     }
                 )
@@ -108,7 +111,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Number(8))
+                        viewModel.onAction(CalculatorAction.Number(8))
                     }
                 )
                 CalculatorButton(
@@ -118,7 +121,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Number(9))
+                        viewModel.onAction(CalculatorAction.Number(9))
                     }
                 )
                 CalculatorButton(
@@ -128,7 +131,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Operation(CalculatorOperation.Multiply))
+                        viewModel.onAction(CalculatorAction.Operation(CalculatorOperation.Multiply))
                     }
                 )
             }
@@ -142,7 +145,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Number(4))
+                        viewModel.onAction(CalculatorAction.Number(4))
                     }
                 )
                 CalculatorButton(
@@ -152,7 +155,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Number(5))
+                        viewModel.onAction(CalculatorAction.Number(5))
                     }
                 )
                 CalculatorButton(
@@ -162,7 +165,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Number(6))
+                        viewModel.onAction(CalculatorAction.Number(6))
                     }
                 )
                 CalculatorButton(
@@ -172,7 +175,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Operation(CalculatorOperation.Subtract))
+                        viewModel.onAction(CalculatorAction.Operation(CalculatorOperation.Subtract))
                     }
                 )
             }
@@ -187,7 +190,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Number(1))
+                        viewModel.onAction(CalculatorAction.Number(1))
                     }
                 )
                 CalculatorButton(
@@ -197,7 +200,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Number(2))
+                        viewModel.onAction(CalculatorAction.Number(2))
                     }
                 )
                 CalculatorButton(
@@ -207,7 +210,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Number(3))
+                        viewModel.onAction(CalculatorAction.Number(3))
                     }
                 )
                 CalculatorButton(
@@ -217,7 +220,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Operation(CalculatorOperation.Add))
+                        viewModel.onAction(CalculatorAction.Operation(CalculatorOperation.Add))
                     }
                 )
             }
@@ -232,7 +235,7 @@ fun Calculator(
                         .aspectRatio(2f)
                         .weight(2f),
                     onClick ={
-                        onAction(CalculatorAction.Number(0))
+                        viewModel.onAction(CalculatorAction.Number(0))
                     }
                 )
                 CalculatorButton(
@@ -242,7 +245,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Decimal)
+                        viewModel.onAction(CalculatorAction.Decimal)
                     }
                 )
                 CalculatorButton(
@@ -252,7 +255,7 @@ fun Calculator(
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick ={
-                        onAction(CalculatorAction.Calculate)
+                        viewModel.onAction(CalculatorAction.Calculate)
                     }
                 )
             }
